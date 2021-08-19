@@ -1,0 +1,110 @@
+---
+title: "Title"
+author: "Author"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document: 
+    code_folding: show
+    toc: true
+    toc_float: true
+---
+
+# Purpose
+
+<!--
+Explain why this document exists. 
+What are you trying to figure out?
+What are your expectations prior to the analysis?
+-->
+
+# Initialization
+
+## Libraries
+```{r libs, message=FALSE, warning=FALSE}
+library(magrittr)
+library(tidyverse)
+library(cowplot)
+library(Matrix)
+library(matrixStats)
+library(SingleCellExperiment)
+library(scran)
+library(scater)
+```
+
+## Parameters
+```{r set_params}
+set.seed(20210818)
+```
+
+## Functions
+
+```{r methods}
+
+```
+
+# Data
+## Loading
+```{r load_data, message=FALSE}
+
+```
+
+## Preprocessing
+```{r prepare_data}
+
+```
+
+# Analysis
+
+## First View
+
+```{r fig1, fig.width=5, fig.height=4}
+iris %>%
+  mutate(Species=str_to_title(Species)) %>%
+  ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
+  geom_point()  +
+  labs(x="Sepal Length [cm]", y="Sepal Width [cm]") +
+  theme_minimal_grid()
+```
+
+## Nth View
+
+```{r figN, fig.width=3, fig.height=3}
+iris %>%
+  mutate(Species=reorder(str_to_title(Species), Sepal.Width, FUN=median, )) %>%
+  ggplot(aes(x=Species, y=Sepal.Width)) +
+  geom_boxplot() +
+  labs(x=NULL, y="Sepal Width [cm]") +
+  theme_minimal_hgrid()
+```
+
+# Conclusion
+
+<!--
+What was found?
+Clearly state conclusions.
+Was there anything unexpected?
+Are there unanswered questions?
+What should be worked on next?
+-->
+
+---
+
+# Runtime Details
+## Session Info
+```{r sesh_info, echo=FALSE}
+sessionInfo()
+```
+
+## Conda Environment
+```{bash comment="", echo=FALSE}
+if ! command -v conda &> /dev/null
+then
+  echo "Conda not detected."
+elif [ -z "${CONDA_PREFIX}" ]
+then
+  echo "No active Conda environment."
+else
+  echo "## Conda Environment YAML"
+  conda env export
+fi
+```

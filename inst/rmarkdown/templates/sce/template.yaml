@@ -1,0 +1,3 @@
+name: SingleCellExperiment
+description: Scientific data analysis template for SingleCellExperiments.
+create_dir: false

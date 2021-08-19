@@ -1,0 +1,3 @@
+name: plyranges
+description: Scientific data analysis template working with GenomicRanges.
+create_dir: false

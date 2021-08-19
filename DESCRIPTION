@@ -1,0 +1,15 @@
+Package: mervdown
+Title: RMarkdown Templates by Merv
+Version: 0.1.0
+Authors@R: 
+    person(given = "Mervin",
+           family = "Fansler",
+           role = c("aut", "cre"),
+           email = "mef3005@med.cornell.edu",
+           comment = c(ORCID = "0000-0002-4108-4218"))
+Description: A collection of opinionated R markdown templates the author created
+    for scientific data analysis and reporting.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
