@@ -1,0 +1,43 @@
+{% set version = '0.1.1' %}
+
+package:
+  name: r-mervdown
+  version: {{ version|replace("-", "_") }}
+
+source:
+  path: ../
+
+build:
+  number: 0
+  skip: True  # [win]
+
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - git
+
+  host:
+    - r-base  {{ r_base }}
+    - r-markdown
+
+  run:
+    - r-base
+    - r-markdown
+
+test:
+  commands:
+    - $R -e "rmarkdown::draft('plyranges', 'plyranges', package='mervdown')"
+    - $R -e "rmarkdown::draft('sce', 'sce', package='mervdown')"
+    - $R -e "rmarkdown::draft('tidyverse', 'tidyverse', package='mervdown')"
+
+about:
+  home: https://github.com/mfansler/mervdown
+  summary: A collection of opinionated R markdown templates the author created
+    for scientific data analysis and reporting.
+  license: GPL-3.0-or-later
+  license_family: GPL3
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
