@@ -34,9 +34,11 @@ jobs:
         with:
           environment-file: conda-recipe/mamba-build.yaml
 
-      - name: build and upload package
-        shell: bash
+      - name: build and upload package (UNIX)
+        if: runner.os == 'Linux' || runner.os == 'macOS'
+        shell: bash -l -eo pipefail {0}
         run: |
+          micromamba activate mamba-build
           conda mambabuild \
             --user $ANACONDA_USER \
             --token $ANACONDA_TOKEN \
