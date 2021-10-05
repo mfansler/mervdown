@@ -1,6 +1,6 @@
 Package: mervdown
 Title: RMarkdown Templates by Merv
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Mervin",
            family = "Fansler",
@@ -13,3 +13,20 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    cowplot,
+    GenomicFeatures,
+    GenomicRanges,
+    magrittr,
+    Matrix,
+    matrixStats,
+    plyranges,
+    rtracklayer,
+    scater,
+    scran,
+    SingleCellExperiment,
+    testthat (>= 3.0.0),
+    tidyverse
+Config/testthat/edition: 3
+Imports: 
+    rmarkdown
