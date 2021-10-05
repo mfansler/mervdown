@@ -6,6 +6,10 @@
 <!-- badges: start -->
 
 [![R-CMD-check-bioc](https://github.com/mfansler/mervdown/actions/workflows/check-bioc.yml/badge.svg)](https://github.com/mfansler/mervdown/actions/workflows/check-bioc.yml)
+[![Install with
+Conda](https://anaconda.org/merv/r-mervdown/badges/installer/conda.svg)](https://conda.anaconda.org/merv/r-mervdown)
+[![Anaconda Cloud
+Version](https://anaconda.org/merv/r-mervdown/badges/version.svg)](https://anaconda.org/merv/r-mervdown)
 <!-- badges: end -->
 
 This package collects a set of *opinionated* R Markdown templates the
