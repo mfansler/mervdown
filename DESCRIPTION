@@ -22,6 +22,8 @@ Suggests:
     matrixStats,
     plyranges,
     rtracklayer,
+    scater,
+    scran,
     SingleCellExperiment,
     testthat (>= 3.0.0),
     tidyverse
