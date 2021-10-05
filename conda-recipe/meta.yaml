@@ -8,7 +8,7 @@ source:
   path: ../
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
 
   rpaths:
@@ -21,11 +21,11 @@ requirements:
 
   host:
     - r-base  {{ r_base }}
-    - r-markdown
+    - r-rmarkdown
 
   run:
     - r-base
-    - r-markdown
+    - r-rmarkdown
 
 test:
   commands:
