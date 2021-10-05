@@ -29,9 +29,10 @@ requirements:
 
 test:
   commands:
-    - $R -e "rmarkdown::draft('plyranges', 'plyranges', package='mervdown')"
-    - $R -e "rmarkdown::draft('sce', 'sce', package='mervdown')"
-    - $R -e "rmarkdown::draft('tidyverse', 'tidyverse', package='mervdown')"
+    ## verify each template is draftable
+    - $R -e "rmarkdown::draft('plyranges', 'plyranges', package='mervdown', edit=FALSE)"
+    - $R -e "rmarkdown::draft('sce', 'sce', package='mervdown', edit=FALSE)"
+    - $R -e "rmarkdown::draft('tidyverse', 'tidyverse', package='mervdown', edit=FALSE)"
 
 about:
   home: https://github.com/mfansler/mervdown
