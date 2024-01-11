@@ -5,6 +5,9 @@
 #' @examples
 #' library(rmarkdown)
 #'
+#' available_templates("mervdown")
+#'
+#' \dontrun{
 #' ## start an analysis with plyranges
 #' draft("0_plyranges_analysis", "plyranges", "mervdown")
 #'
@@ -13,6 +16,7 @@
 #'
 #' ## start an analysis with tidyverse packages
 #' draft("2_ggplots", "tidyverse", "mervdown")
+#' }
 #'
 #' @importFrom rmarkdown draft
 "_PACKAGE"

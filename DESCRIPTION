@@ -31,4 +31,4 @@ Suggests:
     tidyverse
 Config/testthat/edition: 3
 Imports: 
-    rmarkdown
+    rmarkdown (>= 2.12)
