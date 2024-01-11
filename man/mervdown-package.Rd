@@ -11,6 +11,9 @@ A set of opinionated R Markdown templates for biological data analysis.
 \examples{
 library(rmarkdown)
 
+available_templates("mervdown")
+
+\dontrun{
 ## start an analysis with plyranges
 draft("0_plyranges_analysis", "plyranges", "mervdown")
 
@@ -19,6 +22,7 @@ draft("1_scRNAseq_analysis", "sce", "mervdown")
 
 ## start an analysis with tidyverse packages
 draft("2_ggplots", "tidyverse", "mervdown")
+}
 
 }
 \author{
