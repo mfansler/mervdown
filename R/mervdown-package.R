@@ -1,9 +1,6 @@
 #' mervdown: R Markdown Templates by Merv
 #'
-#' A set of opinionated R Markdown templates for scientific data analysis.
-#'
-#' @name mervdown
-#' @docType package
+#' A set of opinionated R Markdown templates for biological data analysis.
 #'
 #' @examples
 #' library(rmarkdown)
@@ -18,4 +15,8 @@
 #' draft("2_ggplots", "tidyverse", "mervdown")
 #'
 #' @importFrom rmarkdown draft
+"_PACKAGE"
+
+## usethis namespace: start
+## usethis namespace: end
 NULL

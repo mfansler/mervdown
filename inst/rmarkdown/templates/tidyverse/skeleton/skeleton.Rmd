@@ -5,6 +5,8 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
   html_document: 
     code_folding: show
+    df_print: paged
+    theme: cosmo
     toc: true
     toc_float: true
 ---
@@ -23,12 +25,13 @@ What are your expectations prior to the analysis?
 ```{r libs, message=FALSE, warning=FALSE}
 library(magrittr)
 library(tidyverse)
-library(cowplot)
 ```
 
 ## Parameters
 ```{r set_params}
-set.seed(20210818)
+set.seed(20240111)
+
+theme_set(theme_bw())
 ```
 
 ## Functions
@@ -57,19 +60,17 @@ iris %>%
   mutate(Species=str_to_title(Species)) %>%
   ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
   geom_point()  +
-  labs(x="Sepal Length [cm]", y="Sepal Width [cm]") +
-  theme_minimal_grid()
+  labs(x="Sepal Length [cm]", y="Sepal Width [cm]")
 ```
 
-## Nth View
+## Second View
 
-```{r figN, fig.width=3, fig.height=3}
+```{r fig2, fig.width=3, fig.height=3}
 iris %>%
-  mutate(Species=reorder(str_to_title(Species), Sepal.Width, FUN=median, )) %>%
+  mutate(Species=reorder(str_to_title(Species), Sepal.Width, FUN=median)) %>%
   ggplot(aes(x=Species, y=Sepal.Width)) +
   geom_boxplot() +
-  labs(x=NULL, y="Sepal Width [cm]") +
-  theme_minimal_hgrid()
+  labs(x=NULL, y="Sepal Width [cm]")
 ```
 
 # Conclusion
@@ -86,12 +87,15 @@ What should be worked on next?
 
 # Runtime Details
 ## Session Info
+<details>
 ```{r sesh_info, echo=FALSE}
 sessionInfo()
 ```
+</details>
 
 ## Conda Environment
-```{bash comment="", echo=FALSE}
+<details>
+```{bash conda_info, comment="", echo=FALSE}
 if ! command -v conda &> /dev/null
 then
   echo "Conda not detected."
@@ -100,6 +104,8 @@ then
   echo "No active Conda environment."
 else
   echo "## Conda Environment YAML"
-  conda env export
+  PREFIX=$(dirname $(dirname $(which R)))
+  conda env export -p $PREFIX
 fi
 ```
+</details>
