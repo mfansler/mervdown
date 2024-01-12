@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/mfansler/mervdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mfansler/mervdown/actions/workflows/R-CMD-check.yaml)
 [![Anaconda-Server
 Badge](https://anaconda.org/merv/r-mervdown/badges/version.svg)](https://anaconda.org/merv/r-mervdown)
 [![Anaconda-Server
