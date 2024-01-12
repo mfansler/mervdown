@@ -16,12 +16,13 @@ knitr::opts_chunk$set(
 # mervdown
 
 <!-- badges: start -->
-[![R-CMD-check-bioc](https://github.com/mfansler/mervdown/actions/workflows/check-bioc.yml/badge.svg)](https://github.com/mfansler/mervdown/actions/workflows/check-bioc.yml)
-[![Install with Conda](https://anaconda.org/merv/r-mervdown/badges/installer/conda.svg)](https://conda.anaconda.org/merv/r-mervdown)
-[![Anaconda Cloud Version](https://anaconda.org/merv/r-mervdown/badges/version.svg)](https://anaconda.org/merv/r-mervdown)
+[![Anaconda-Server Badge](https://anaconda.org/merv/r-mervdown/badges/version.svg)](https://anaconda.org/merv/r-mervdown)
+[![Anaconda-Server Badge](https://anaconda.org/merv/r-mervdown/badges/latest_release_date.svg)](https://anaconda.org/merv/r-mervdown)
+[![Anaconda-Server Badge](https://anaconda.org/merv/r-mervdown/badges/platforms.svg)](https://anaconda.org/merv/r-mervdown)
+[![Anaconda-Server Badge](https://anaconda.org/merv/r-mervdown/badges/downloads.svg)](https://anaconda.org/merv/r-mervdown)
 <!-- badges: end -->
 
-This package collects a set of *opinionated* R Markdown templates the author uses for scientific data analysis. Feel free to use, copy, or fork.
+This package collects a set of *opinionated* R Markdown templates the author uses for biological data analysis. Feel free to use, copy, or fork.
 
 Opinionated features common to all templates include:
 
@@ -37,15 +38,14 @@ Opinionated features common to all templates include:
 The author primarily manages R environments with [Mamba](https://mamba.readthedocs.io/en/latest/), so releases go directly to Anaconda Cloud. To install with Mamba (or Conda), use
 
 ```bash
-# conda install -n base conda-forge::mamba
-mamba install merv::mervdown
+mamba install merv::r-mervdown
 ```
 
-For native R installations, one can install from GitHub, either through `devtools`
+For native R installations, one can install from GitHub, either through `remotes``
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("mfansler/mervdown")
+# install.packages("remotes")
+remotes::install_github("mfansler/mervdown")
 ```
 
 or through `BiocManager`
@@ -64,6 +64,12 @@ After installation, templates are available through RStudio under
 then selecting the **From Template** section in the **New R Markdown** dialog box:
 
 ![New R Markdown dialog box with **mervdown** templates](man/figures/new-rmd-dialog.png){width=50%}
+
+Alternatively, one can query templates programatically with:
+
+```{r available_templates}
+rmarkdown::available_templates("mervdown")
+```
 
 ## Forking
 
