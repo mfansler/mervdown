@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'conda-recipe/meta.yaml'
+      - '.github/workflows/build-conda.yml'
 
 jobs:
   build-publish:
@@ -25,14 +26,16 @@ jobs:
 
     steps:
       - name: checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: conda
 
-      - name: install mamba
-        uses: mamba-org/provision-with-micromamba@main
+      - name: install micromamba
+        uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: conda-recipe/mamba-build.yaml
+          environment-name: mamba-build
+          init-shell: bash
 
       - name: build and upload package (UNIX)
         if: runner.os == 'Linux' || runner.os == 'macOS'
