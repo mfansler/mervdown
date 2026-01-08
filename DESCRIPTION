@@ -1,11 +1,11 @@
 Package: mervdown
 Title: RMarkdown Templates by Merv
-Version: 0.2
+Version: 0.2.1
 Authors@R: 
     person(given = "Mervin",
            family = "Fansler",
            role = c("aut", "cre"),
-           email = "fanslerm@mskcc.org",
+           email = "mervin.fansler@bric.ku.dk",
            comment = c(ORCID = "0000-0002-4108-4218"))
 Description: A collection of opinionated R markdown templates the author created
     for biological data analysis and reporting.
